@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Increment/Decrement Button</title>
+    <style>
+        /* CSS for styling the buttons and text */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Time: <span id="time">0</span></h1>
+    <button id="incrementBtn">Increment Time</button>
+    <button id="decrementBtn">Decrement Time</button>
+
+    <script>
+        // JavaScript for handling the button clicks
+        const timeElement = document.getElementById('time');
+        let time = 1;
+
+        document.getElementById('incrementBtn').addEventListener('click', () => {
+            time++;
+            timeElement.textContent = time;
+        });
+
+        document.getElementById('decrementBtn').addEventListener('click', () => {
+            if (time > -1) {
+                time--;
+            }
+            timeElement.textContent = time;
+        });
+    </script>
+</body>
+</html>

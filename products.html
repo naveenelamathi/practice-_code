@@ -1,0 +1,280 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makeup Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+        }
+
+        .search-bar input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(25% - 20px);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product-card p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .product-card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                width: 100%;
+            }
+
+            .search-bar input[type="text"] {
+                width: 70%;
+            }
+
+            .search-bar button {
+                width: 25%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for makeup products...">
+            <button onclick="searchProducts()">Search</button>
+        </div>
+
+        <div class="product-list" id="productList">
+            <!-- Products will be injected here using JavaScript -->
+        <!-- </div>
+    </div>
+
+    <script>
+        const products = [
+            { id: 1, name: "Lipstick", brand: "Brand A", image: "lipstick.jpg" },
+            { id: 2, name: "Mascara", brand: "Brand B", image: "mascara.jpg" },
+            { id: 3, name: "Foundation", brand: "Brand C", image: "foundation.jpg" },
+            { id: 4, name: "Blush", brand: "Brand D", image: "blush.jpg" },
+            // Additional products
+        ];
+
+        function displayProducts(productsToShow) {
+            const productList = document.getElementById('productList');
+            productList.innerHTML = '';
+            productsToShow.forEach(product => {
+                const productCard = `
+                    <div class="product-card">
+                        <img src="${product.image}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <p>${product.brand}</p>
+                    </div>
+                `;
+                productList.innerHTML += productCard;
+            });
+        }
+
+        function searchProducts() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const filteredProducts = products.filter(product =>
+                product.name.toLowerCase().includes(searchInput) ||
+                product.brand.toLowerCase().includes(searchInput)
+            );
+            displayProducts(filteredProducts);
+        }
+
+        // Initial display
+        displayProducts(products);
+    </script>
+</body>
+
+</html> --> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makeup Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+        }
+
+        .search-bar input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(25% - 20px);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product-card p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .product-card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                width: 100%;
+            }
+
+            .search-bar input[type="text"] {
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for makeup products...">
+        </div>
+
+        <div class="product-list" id="productList">
+            <!-- Products will be injected here using JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        const products = [
+            { id: 1, name: "Lipstick", brand: "Brand A", image: "lipstick.jpg" },
+            { id: 2, name: "Mascara", brand: "Brand B", image: "mascara.jpg" },
+            { id: 3, name: "Foundation", brand: "Brand C", image: "foundation.jpg" },
+            { id: 4, name: "Blush", brand: "Brand D", image: "blush.jpg" },
+            // Additional products
+        ];
+
+        function displayProducts(productsToShow) {
+            const productList = document.getElementById('productList');
+            productList.innerHTML = '';
+            productsToShow.forEach(product => {
+                const productCard = `
+                    <div class="product-card">
+                        <img src="${product.image}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <p>${product.brand}</p>
+                    </div>
+                `;
+                productList.innerHTML += productCard;
+            });
+        }
+
+        function searchProducts() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const filteredProducts = products.filter(product =>
+                product.name.toLowerCase().includes(searchInput) ||
+                product.brand.toLowerCase().includes(searchInput)
+            );
+            displayProducts(filteredProducts);
+        }
+
+        // Initial display
+        displayProducts(products);
+
+        // Add event listener for real-time search
+        document.getElementById('searchInput').addEventListener('input', searchProducts);
+    </script>
+</body>
+
+</html>
+
